@@ -52,6 +52,9 @@ jobs:
         with:
           name: docs
           path: ./packages/docs/.vitepress/dist
+      
+      - name: Verify built files
+        run: ls -al ./packages/docs/.vitepress/dist
 
   deploy:
     name: Deploy to GitHub Pages
