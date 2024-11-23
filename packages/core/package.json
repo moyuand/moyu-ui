@@ -1,0 +1,18 @@
+{
+  "name": "moyu-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@moyu-ui/components": "workspace:*",
+    "@moyu-ui/hooks": "workspace:*",
+    "@moyu-ui/theme": "workspace:*",
+    "@moyu-ui/utils": "workspace:*"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
