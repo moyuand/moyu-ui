@@ -52,6 +52,11 @@ jobs:
         with:
           name: docs
           path: ./packages/docs/.vitepress/dist
+          
+      - name: List project files
+        run: ls -al ./packages/docs
+      - name: List VitePress files
+        run: ls -al ./packages/docs/.vitepress
       
       - name: Verify built files
         run: ls -al ./packages/docs/.vitepress/dist
