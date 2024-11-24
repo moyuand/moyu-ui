@@ -51,15 +51,15 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: docs
-          path: ./packages/docs/.vitepress/dist
-          
+          path: ./packages/docs/moyu-ui/.vitepress/dist
+
       - name: List project files
         run: ls -al ./packages/docs
       - name: List VitePress files
-        run: ls -al ./packages/docs/.vitepress
+        run: ls -al ./packages/moyu-ui/docs/.vitepress
       
       - name: Verify built files
-        run: ls -al ./packages/docs/.vitepress/dist
+        run: ls -al ./packages/moyu-ui/docs/.vitepress/dist
 
   deploy:
     name: Deploy to GitHub Pages
