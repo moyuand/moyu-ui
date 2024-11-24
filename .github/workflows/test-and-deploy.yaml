@@ -56,10 +56,10 @@ jobs:
       - name: List project files
         run: ls -al ./packages/docs
       - name: List VitePress files
-        run: ls -al ./packages/moyu-ui/docs/.vitepress
+        run: ls -al ./packages/docs/moyu-ui/.vitepress
       
       - name: Verify built files
-        run: ls -al ./packages/moyu-ui/docs/.vitepress/dist
+        run: ls -al ./packages/docs/moyu-ui/.vitepress/dist
 
   deploy:
     name: Deploy to GitHub Pages
