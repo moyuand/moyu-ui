@@ -5,7 +5,7 @@ import { fas } from "@fortawesome/free-solid-svg-icons";
 import "@moyu-ui/theme/index.css"
 
 const installer = makeInstaller(components);
-library.add(fas);
+library.add(fas); 
 
 export * from "@moyu-ui/components";
 export default installer;
