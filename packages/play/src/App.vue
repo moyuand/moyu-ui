@@ -1,9 +1,9 @@
 <script setup lang="ts">
-console.log('aaa')
+
 </script>
 
 <template>
-  <MyButton />
+  <MyButton type="primary" size="small">hello world</MyButton>
 </template>
 
 <style scoped>
