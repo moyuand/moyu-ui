@@ -1,8 +1,9 @@
 <script setup lang="ts">
 import type { ButtonProps, ButtonEmits, ButtonInstance } from './types';
-import { ref, type Ref, computed } from 'vue';
+import { ref, type Ref, computed, inject } from 'vue';
 import { throttle } from 'lodash-es'
 import MyIcon from '../Icon/Icon.vue';
+import {BUTTON_GROUP_CTX_KEY} from './contants'
 
 defineOptions({
   name: 'MyButton'
@@ -21,6 +22,11 @@ const emits = defineEmits<ButtonEmits>();
 const slots = defineSlots();
 
 const _ref = ref<HTMLButtonElement>();
+
+const ctx = inject(BUTTON_GROUP_CTX_KEY, void 0) 
+const size = computed(() => ctx?.size ?? props.size ?? 'default')
+const disabled = computed(() => ctx?.disabled || props.disabled || false)
+const type = computed(() => ctx?.type ?? props.type ?? 'primary')
 
 const iconStyle = computed(() => ({
   marginRight: slots.default ? '6px' : '0'
