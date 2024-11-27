@@ -1,5 +1,5 @@
 {
-  "name": "moyu-ui",
+  "name": "moyuand-ui",
   "version": "1.0.1",
   "description": "Components Library By Vue3 + TS",
   "main": "./dist/umd/index.umd.js",
