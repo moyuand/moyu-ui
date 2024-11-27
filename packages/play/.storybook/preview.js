@@ -1,4 +1,5 @@
 /** @type { import('@storybook/vue3').Preview } */
+import 'moyu-ui/dist/index.css'
 const preview = {
   parameters: {
     controls: {

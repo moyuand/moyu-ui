@@ -1,6 +1,5 @@
 <script setup lang="ts">
-// import type { IconProps } from './types';
-import type { IconProps } from './types'
+import type { IconProps } from './types';
 import {FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { omit } from 'lodash-es';
 import { computed } from 'vue';
@@ -27,6 +26,6 @@ const costomStyle = computed(() => ({color: props.color ?? void 0 }))
     <font-awesome-icon v-bind="filiterProps" />
   </i>
 </template>
-<style scoped>
+<style>
 @import "./style.css";
 </style>

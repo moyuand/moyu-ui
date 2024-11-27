@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <MyButton>hhh</MyButton>
+  <MyButton type="success">success</MyButton>
 </template>
 
 <style scoped>
