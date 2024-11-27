@@ -1,9 +1,9 @@
 import { describe, it, expect, test } from 'vitest'
 import { mount } from '@vue/test-utils'
 import Button from './Button.vue' 
-import Icon from '../Icon/Icon.vue';
+import Icon from '../icon/Icon.vue';
 import ButtonGroup from './ButtonGroup.vue';
-import type { ButtonType, ButtonSize } from './types';
+import type { ButtonSize } from './types';
 
 describe('Button.vue', ()=> {
   it("should has the correct type class when type prop is set", () => {

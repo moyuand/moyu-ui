@@ -1,18 +1,50 @@
 {
   "name": "moyu-ui",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "version": "1.0.1",
+  "description": "Components Library By Vue3 + TS",
+  "main": "./dist/umd/index.umd.js",
+  "moduld": "./dist/es/index.mjs",
+  "types": "./dist/types/core/index.d.ts",
+  "file": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/types/core/index.d.ts",
+      "import": "./dist/es/index.mjs",
+      "require": "./dist/umd/index.umd.cjs"
+    },
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist"
+    }
   },
+  "sideEffects": ["./dist/index.css "],
+  "scripts": {
+    "build": "run-s clean build-only move-style",
+    "build-only": "run-p build-es build-umd",
+    "build-umd": "vite build --config ./vite.umd.config.ts",
+    "build-es": "vite build --config ./vite.es.config.ts",
+    "move-style": "move-file dist/es/index.css dist/index.css",
+    "clean": "rimraf dist",
+    "release": "release-it"
+  },
+
   "dependencies": {
-    "@moyu-ui/components": "workspace:*",
-    "@moyu-ui/hooks": "workspace:*",
-    "@moyu-ui/theme": "workspace:*",
-    "@moyu-ui/utils": "workspace:*"
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "6.5.1",
+    "@fortawesome/vue-fontawesome": "3.0.6",
+    "@popperjs/core": "^2.11.8",
+    "async-validator": "^4.2.5"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "vite-plugin-dts": "^3.9.1",
+    "@moyu-ui/components": "workspace:*"
+  },
+  "peerDependencies": {
+    "vue": "^3.4.19"
+  }
 }

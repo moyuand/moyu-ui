@@ -1,9 +1,8 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  <MyButton type="primary" size="small">hello world</MyButton>
+  <MyButton>hhh</MyButton>
 </template>
 
 <style scoped>

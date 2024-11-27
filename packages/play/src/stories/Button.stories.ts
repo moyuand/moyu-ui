@@ -1,6 +1,8 @@
 import type { Meta, StoryObj, ArgTypes } from "@storybook/vue3";
 import { fn, within, userEvent, expect } from "@storybook/test";
 import { MyButton, MyButtonGroup } from "moyu-ui";
+import 'moyu-ui/dist/index.css'
+
 // import "moyu-ui/dist/theme/Button.css";  
 
 type Story = StoryObj<typeof MyButton> & { argTypes?: ArgTypes };

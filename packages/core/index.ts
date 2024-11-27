@@ -6,6 +6,5 @@ import "@moyu-ui/theme/index.css"
 
 const installer = makeInstaller(components);
 library.add(fas); 
-
-export * from "@moyu-ui/components";
+export * from "./components";
 export default installer;
