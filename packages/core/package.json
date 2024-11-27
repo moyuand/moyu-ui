@@ -1,6 +1,6 @@
 {
   "name": "moyuand-ui",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Components Library By Vue3 + TS",
   "main": "./dist/umd/index.umd.js",
   "moduld": "./dist/es/index.mjs",
@@ -19,7 +19,9 @@
       "require": "./dist"
     }
   },
-  "sideEffects": ["./dist/index.css "],
+  "sideEffects": [
+    "./dist/index.css "
+  ],
   "scripts": {
     "build": "run-s clean build-only move-style",
     "build-only": "run-p build-es build-umd",
@@ -29,7 +31,6 @@
     "clean": "rimraf dist",
     "release": "release-it"
   },
-
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "6.5.1",
