@@ -10,8 +10,8 @@
     "docs:preview": "pnpm --filter @moyu-ui/docs preview",
     "test": "pnpm --filter @moyu-ui/components test",
     "story": "pnpm --filter @moyu-ui/play storybook",
-    "build": "pnpm --filter moyu-ui build",
-    "release": "pnpm --filter moyu-ui release"
+    "build": "pnpm --filter moyuand-ui build",
+    "release": "pnpm --filter moyuand-ui release"
   },
   "keywords": [],
   "author": "",
