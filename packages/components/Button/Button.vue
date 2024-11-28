@@ -2,7 +2,7 @@
 import type { ButtonProps, ButtonEmits, ButtonInstance } from './types';
 import { ref, computed, inject } from 'vue';
 import { throttle } from 'lodash-es'
-import MyIcon from '../icon/Icon.vue';
+import MyIcon from '../Icon/Icon.vue';
 import {BUTTON_GROUP_CTX_KEY} from './contants'
 
 defineOptions({
