@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm --filter @moyu-ui/play dev",
-    "docs:dev": "pnpm --filter @moyu-ui/docs dev",
+    "dev": "pnpm run build && pnpm --filter @moyu-ui/play dev",
+    "docs:dev": "pnpm run build && pnpm --filter @moyu-ui/docs dev",
     "docs:build": "pnpm --filter @moyu-ui/docs build",
     "docs:preview": "pnpm --filter @moyu-ui/docs preview",
     "test": "pnpm --filter @moyu-ui/components test",
