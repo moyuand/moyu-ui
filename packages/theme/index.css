@@ -2,66 +2,66 @@
 
 :root { 
   /* colors */ 
-  --er-color-white: #ffffff;
-  --er-color-black: #000000;
+  --my-color-white: #ffffff;
+  --my-color-black: #000000;
   --colors: (primary: #409eff, success: #67c23a, warning: #e6a23c, danger: #f56c6c, info: #909399);
-  --er-bg-color: #ffffff;
-  --er-bg-color-page: #f2f3f5;
-  --er-bg-color-overlay: #ffffff;
-  --er-text-color-primary: #303133;
-  --er-text-color-regular: #606266;
-  --er-text-color-secondary: #909399;
-  --er-text-color-placeholder: #a8abb2;
-  --er-text-color-disabled: #c0c4cc;
-  --er-border-color: #dcdfe6;
-  --er-border-color-light: #e4e7ed;
-  --er-border-color-lighter: #ebeef5;
-  --er-border-color-extra-light: #f2f6fc;
-  --er-border-color-dark: #d4d7de;
-  --er-border-color-darker: #cdd0d6;
-  --er-fill-color: #f0f2f5;
-  --er-fill-color-light: #f5f7fa;
-  --er-fill-color-lighter: #fafafa;
-  --er-fill-color-extra-light: #fafcff;
-  --er-fill-color-dark: #ebedf0;
-  --er-fill-color-darker: #e6e8eb;
-  --er-fill-color-blank: #ffffff;
+  --my-bg-color: #ffffff;
+  --my-bg-color-page: #f2f3f5;
+  --my-bg-color-overlay: #ffffff;
+  --my-text-color-primary: #303133;
+  --my-text-color-regular: #606266;
+  --my-text-color-secondary: #909399;
+  --my-text-color-placeholder: #a8abb2;
+  --my-text-color-disabled: #c0c4cc;
+  --my-border-color: #dcdfe6;
+  --my-border-color-light: #e4e7ed;
+  --my-border-color-lighter: #ebeef5;
+  --my-border-color-extra-light: #f2f6fc;
+  --my-border-color-dark: #d4d7de;
+  --my-border-color-darker: #cdd0d6;
+  --my-fill-color: #f0f2f5;
+  --my-fill-color-light: #f5f7fa;
+  --my-fill-color-lighter: #fafafa;
+  --my-fill-color-extra-light: #fafcff;
+  --my-fill-color-dark: #ebedf0;
+  --my-fill-color-darker: #e6e8eb;
+  --my-fill-color-blank: #ffffff;
   
   @each $val, $color in var(--colors) {
-    --er-color-$(val): $(color);
+    --my-color-$(val): $(color);
     @for $i from 3 to 9 {
-      --er-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
+      --my-color-$(val)-light-$(i): mix(#fff, $(color), 0.$(i));
     }
-    --er-color-$(val)-dark-2: mix(#000, $(color), 0.2);
+    --my-color-$(val)-dark-2: mix(#000, $(color), 0.2);
   }
 
   /* border */
-  --er-border-width: 1px;
-  --er-border-style: solid;
-  --er-border-color-hover: var(--er-text-color-disabled);
-  --er-border: var(--er-border-width) var(--er-border-style) var(--er-border-color);
-  --er-border-radius-base: 4px;
-  --er-border-radius-small: 2px;
-  --er-border-radius-round: 20px;
-  --er-border-radius-circle: 100%;
+  --my-border-width: 1px;
+  --my-border-style: solid;
+  --my-border-color-hover: var(--my-text-color-disabled);
+  --my-border: var(--my-border-width) var(--my-border-style) var(--my-border-color);
+  --my-border-radius-base: 4px;
+  --my-border-radius-small: 2px;
+  --my-border-radius-round: 20px;
+  --my-border-radius-circle: 100%;
 
   /*font*/
-  --er-font-size-extra-large: 20px;
-  --er-font-size-large: 18px;
-  --er-font-size-medium: 16px;
-  --er-font-size-base: 14px;
-  --er-font-size-small: 13px;
-  --er-font-size-extra-small: 12px;
-  --er-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
+  --my-font-size-extra-large: 20px;
+  --my-font-size-large: 18px;
+  --my-font-size-medium: 16px;
+  --my-font-size-base: 14px;
+  --my-font-size-small: 13px;
+  --my-font-size-extra-small: 12px;
+  --my-font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Hiragino Sans GB',
     'Microsoft YaHei', '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;
-  --er-font-weight-primary: 500;
+  --my-font-weight-primary: 500;
 
   /*disabled*/
-  --er-disabled-bg-color: var(--er-fill-color-light);
-  --er-disabled-text-color: var(--er-text-color-placeholder);
-  --er-disabled-border-color: var(--er-border-color-light);
+  --my-disabled-bg-color: var(--my-fill-color-light);
+  --my-disabled-text-color: var(--my-text-color-placeholder);
+  --my-disabled-border-color: var(--my-border-color-light);
 
   /*animation*/
-  --er-transition-duration: 0.4s;
-  --er-transition-duration-fast: 0.2s;
+  --my-transition-duration: 0.4s;
+  --my-transition-duration-fast: 0.2s;
 }

@@ -8,7 +8,8 @@ import dts from 'vite-plugin-dts'
 const COMP_NAMES = [
   // "Alert",
   "Button",
-  "Icon"
+  "Icon",
+  "Collapse"
 ]
 // function getDirectoriesSync(basePath: string) {
 //   const entries = readdirSync(basePath, { withFileTypes: true });
