@@ -2,8 +2,20 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts'
-// import { readdirSync } from "fs";
-// import { map, filter } from "lodash-es";
+import { readdirSync, readFileSync } from "fs";
+import { delay, map, filter } from "lodash-es";
+import shell from 'shelljs'
+import hooksPlugin from './hooksPlugin';
+
+const TRY_MOVE_STYLES_DELAY = 800 as const
+function moveStyles() {
+  try {
+    readFileSync('./dist/es/theme')
+    shell.mv('./dist/es/theme', './dist')
+  } catch(e) {
+    delay(moveStyles, TRY_MOVE_STYLES_DELAY)
+  }
+} 
 
 const COMP_NAMES = [
   // "Alert",
@@ -11,22 +23,30 @@ const COMP_NAMES = [
   "Icon",
   "Collapse"
 ]
-// function getDirectoriesSync(basePath: string) {
-//   const entries = readdirSync(basePath, { withFileTypes: true });
+function getDirectoriesSync(basePath: string) {
+  const entries = readdirSync(basePath, { withFileTypes: true });
 
-//   return map(
-//     filter(entries, (entry) => entry.isDirectory()),
-//     (entry) => entry.name
-//   );
-// }
+  return map(
+    filter(entries, (entry) => entry.isDirectory()),
+    (entry) => entry.name
+  );
+}
 
 export default defineConfig({
-  plugins: [vue(), dts({
-    tsconfigPath: '../../tsconfig.build.json',
-    outDir: 'dist/types'
-  })],
+  plugins: [
+    vue(),
+    dts({
+      tsconfigPath: '../../tsconfig.build.json',
+      outDir: 'dist/types',
+    }),
+    hooksPlugin({
+      rmFiles: ['./dist/es', './dist/theme', './dist/types'],
+      afterBuild: moveStyles
+    })
+  ],
   build: {
     outDir: 'dist/es',
+    cssCodeSplit: true,
     lib: {
       entry: resolve(__dirname, './index.ts'),
       name: 'MoyuUI',
@@ -45,6 +65,9 @@ export default defineConfig({
       output: {
         assetFileNames: (assetInfo) => {
           if (assetInfo.name === 'style.css') return 'index.css';
+          if (assetInfo.type == 'asset' && /\.(css)$/i.test(assetInfo.name as string)) {
+            return 'theme/[name].[ext]'
+          }
           return assetInfo.name as string;
         },
         manualChunks(id) {
@@ -57,7 +80,7 @@ export default defineConfig({
           if (id.includes('packages/utils')) {
             return 'utils'
           }
-          for (const item of COMP_NAMES) {
+          for (const item of getDirectoriesSync('../components')) {
             if (id.includes(`packages/components/${item}`)) {
               return item;
             }

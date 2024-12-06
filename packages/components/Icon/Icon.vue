@@ -26,6 +26,6 @@ const costomStyle = computed(() => ({color: props.color ?? void 0 }))
     <font-awesome-icon v-bind="filiterProps" />
   </i>
 </template>
-<style>
+<style scoped>
 @import "./style.css";
 </style>
