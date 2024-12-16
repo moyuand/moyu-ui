@@ -4,7 +4,7 @@
  import MoyuUi from 'moyu-ui';
 
  import "@vitepress-preview/component/_product/style.css"
- import 'moyu-ui/dist/index.css';
+ import 'moyu-ui/dist/es/theme/index.css';
 
  export default {
    ...DefaultTheme,
