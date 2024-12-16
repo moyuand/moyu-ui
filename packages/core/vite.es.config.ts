@@ -2,20 +2,20 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts'
-import { readdirSync, readFileSync } from "fs";
-import { delay, map, filter } from "lodash-es";
+import { readdirSync } from "fs";
+// import { delay, map, filter } from "lodash-es";
 import shell from 'shelljs'
-import hooksPlugin from './hooksPlugin';
+// import hooksPlugin from './hooksPlugin';
 
 const TRY_MOVE_STYLES_DELAY = 800 as const
-function moveStyles() {
-  try {
-    readFileSync('./dist/es/theme')
-    shell.mv('./dist/es/theme', './dist')
-  } catch(e) {
-    delay(moveStyles, TRY_MOVE_STYLES_DELAY)
-  }
-} 
+// function moveStyles() {
+//   try {
+//     readFileSync('./dist/es/theme')
+//     shell.mv('./dist/es/theme', './dist')
+//   } catch(e) {
+//     delay(moveStyles, TRY_MOVE_STYLES_DELAY)
+//   }
+// } 
 
 const COMP_NAMES = [
   // "Alert",
@@ -39,10 +39,10 @@ export default defineConfig({
       tsconfigPath: '../../tsconfig.build.json',
       outDir: 'dist/types',
     }),
-    hooksPlugin({
-      rmFiles: ['./dist/es', './dist/theme', './dist/types'],
-      afterBuild: moveStyles
-    })
+    // hooksPlugin({
+    //   rmFiles: ['./dist/es', './dist/theme', './dist/types'],
+    //   afterBuild: moveStyles
+    // })
   ],
   build: {
     outDir: 'dist/es',
@@ -80,7 +80,7 @@ export default defineConfig({
           if (id.includes('packages/utils')) {
             return 'utils'
           }
-          for (const item of getDirectoriesSync('../components')) {
+          for (const item of COMP_NAMES) {
             if (id.includes(`packages/components/${item}`)) {
               return item;
             }
